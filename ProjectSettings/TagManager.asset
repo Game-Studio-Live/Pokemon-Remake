@@ -44,6 +44,15 @@ TagManager:
   - name: Ground
     uniqueID: 2610203443
     locked: 0
+  - name: GroundOverlays
+    uniqueID: 2045791213
+    locked: 0
   - name: Player
     uniqueID: 3794376041
+    locked: 0
+  - name: Objects
+    uniqueID: 2035726071
+    locked: 0
+  - name: Buildings
+    uniqueID: 2100816833
     locked: 0

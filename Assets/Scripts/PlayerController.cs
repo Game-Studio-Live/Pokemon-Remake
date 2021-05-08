@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
+    private Animator animator;
+
     public float movementSpeed;
 
     public bool isMoving;
@@ -13,9 +15,9 @@ public class PlayerController : MonoBehaviour
 
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -35,6 +37,10 @@ public class PlayerController : MonoBehaviour
 
             if (input != Vector2.zero)
             {
+
+                animator.SetFloat("moveX", input.x);
+                animator.SetFloat("moveY", input.y);
+
                 Vector3 target = transform.position;
                 target.x += input.x;
                 target.y += input.y;
@@ -44,6 +50,8 @@ public class PlayerController : MonoBehaviour
             }
 
         }
+
+        animator.SetBool("isMoving", isMoving);
     }
 
     IEnumerator Move(Vector3 target)
